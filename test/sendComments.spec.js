@@ -16,9 +16,11 @@ describe('send Comments ', () => {
       email: 'somethingElse',
     });
     wrapper.find('form').trigger('submit.prevent');
-    expect(wrapper.vm.opinion).toBe(null);
-    expect(wrapper.vm.Name).toBe(null);
-    expect(wrapper.vm.email).toBe(null);
+    setTimeout(() => {
+      expect(wrapper.vm.opinion).toBe(null);
+      expect(wrapper.vm.Name).toBe(null);
+      expect(wrapper.vm.email).toBe(null);
+    }, 2000);
   });
 
   // send comment succesfully2 errors length shoud be 0
