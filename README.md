@@ -1,6 +1,9 @@
 # newspage_Demo
  it's show a newspage which built with vue.js , unit test by mocha-webpack and vue-test-utils
 
+###status
+[![Build Status](https://travis-ci.org/nargespms/newspage_Demo.svg?branch=master)](https://travis-ci.org/nargespms/newspage_Demo)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
