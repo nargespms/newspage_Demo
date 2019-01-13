@@ -3,6 +3,7 @@
 
 ### status
 [![Build Status](https://travis-ci.org/nargespms/newspage_Demo.svg?branch=master)](https://travis-ci.org/nargespms/newspage_Demo)
+![](https://img.shields.io/github/license/nargespms/newspage_Demo.svg?style=popout)
 
 ## Getting Started
 
