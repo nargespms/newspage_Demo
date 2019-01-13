@@ -4,7 +4,7 @@
 ### status
 [![Build Status](https://travis-ci.org/nargespms/newspage_Demo.svg?branch=master)](https://travis-ci.org/nargespms/newspage_Demo)
 ![](https://img.shields.io/github/license/nargespms/newspage_Demo.svg?style=popout)
-
+![](https://img.shields.io/david/nargespms/newspage_Demo.svg)
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
