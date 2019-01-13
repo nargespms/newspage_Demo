@@ -13,8 +13,10 @@ you should have nodejs on your system
 npm install
 ```
 
-# build for production
+## build for production
+```
 npm run build
+```
 
 ## Deployment localhost:4000
 ```
@@ -34,3 +36,7 @@ npm run cover
 * [webpack](https://webpack.js.org/) - webpack is a module bundler
 * [vuejs](https://vuejs.org/) - javascript framework
 * [eslint](https://eslint.org/) - pluggable and configurable linter tool for identifying and reporting on patterns in JavaScript
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
