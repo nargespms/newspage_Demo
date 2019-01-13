@@ -1,5 +1,5 @@
-# Project Title
- it's a newspage_Demo which built with vue.js , unit test by mocha-webpack and vue-test-utils
+# newspage_Demo
+ it's show a newspage which built with vue.js , unit test by mocha-webpack and vue-test-utils
 
 ## Getting Started
 
