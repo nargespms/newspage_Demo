@@ -14,13 +14,15 @@ describe('send Comments ', () => {
       Name: 'sara',
       opinion: 'something',
       email: 'somethingElse',
+      message: "'your message has succesfully sent'",
     });
     wrapper.find('form').trigger('submit.prevent');
-    setTimeout(() => {
-      expect(wrapper.vm.opinion).toBe(null);
-      expect(wrapper.vm.Name).toBe(null);
-      expect(wrapper.vm.email).toBe(null);
-    }, 2000);
+
+    expect(wrapper.vm.opinion).toBe(null);
+    expect(wrapper.vm.Name).toBe(null);
+    expect(wrapper.vm.email).toBe(null);
+    expect(wrapper.vm.message).toBe("'your message has succesfully sent'");
+    log(wrapper.vm.message);
   });
 
   // send comment succesfully2 errors length shoud be 0

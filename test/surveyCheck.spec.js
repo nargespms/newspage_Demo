@@ -23,7 +23,7 @@ describe('survey', () => {
   it('when choosing none', () => {
     const wrapper = shallowMount(survey);
     wrapper.find("[type='submit']").trigger('click');
-    expect(wrapper.find('#survey_msg').exists()).toBe(true);
+    expect(wrapper.find('.survey_msg').exists()).toBe(true);
   });
   // when choosing none2
   it('when choosing none choosing item', () => {
@@ -45,13 +45,13 @@ describe('survey', () => {
     wrapper.find('form').trigger('submit.prevent');
     expect(wrapper.vm.counter).toBe(1);
   });
-  // if choosing any counter shoud increase (choosed item.length == 0)
-  it('should not increase number of people  ', () => {
-    const wrapper = shallowMount(survey);
-    wrapper.find('form').trigger('submit.prevent');
-    expect(wrapper.vm.counter).toBe(0);
-    // console.log(wrapper.vm.choosed);
-  });
+  // // if choosing any counter shoud increase (choosed item.length == 0)
+  // it('should not increase number of people  ', () => {
+  //   const wrapper = shallowMount(survey);
+  //   wrapper.find('form').trigger('submit.prevent');
+  //   expect(wrapper.vm.counter).toBe(0);
+  //   // console.log(wrapper.vm.choosed);
+  // });
   // **********************no effected in coverage**********************
   // if choosing any counter shoud increase
   it('should not increase number of people  ', () => {

@@ -16,7 +16,7 @@
         <p class="numpart"> participated people : {{counter }}</p>
         <!-- button for submitting -->
         <input class="survey_but" type="submit" value="send">
-        <div id="survey_msg"></div>
+        <div class="survey_msg">{{showMe}}</div>
     </form>
 </template>
 
@@ -27,14 +27,16 @@ export default {
           return {
               choosed: [],
               counter: 0,
+              showMe : '',
           }
       },
     methods : {
        countPerson () {
          console.log('run heer');
-           if (this.choosed.length > 0 ){
+           if (this.choosed.length !== 0 ){
                this.counter = this.counter +1;
-               document.getElementById("survey_msg").innerHTML = "thank you :)";
+                let showMe = "thank you :)";
+               console.log(showMe);
            }
            else if (this.choosed.length == 0) {
                document.getElementById("survey_msg").innerHTML = "please choose one the above & try again!"

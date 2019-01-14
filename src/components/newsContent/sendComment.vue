@@ -14,7 +14,7 @@
                     <li class="error_wrap" v-for="error in errors" v-bind:key="error.index"> {{error}}</li>
                 </ul>
             </p>
-           <div id="sucmsg"></div>
+           <div class="sucmsg">{{ message }}</div>
         </fieldset>
 
 
@@ -31,26 +31,25 @@ export default {
           opinion: '',
           email : '',
           errors : [],
+          message: '',
         }
     },
     methods: {
         onSubmit () {
-            if (this.opinion.length !== 0 && this.email.length !== 0) {
+            if (this.opinion.length !== 0 && this.email.length !== 0 && this.errors.length == 0) {
                 let formData = {
                     firstName : this.Name,
                     email : this.email,
-                    opinion : this.opinion
+                    opinion : this.opinion,
                 }
 
                 //for resetting form
                 this.Name = null,
                 this.email = null,
                 this.opinion = null;
-
                 //successfull message
-                if(this.errors.length === 0) {
-                    document.getElementById("sucmsg").innerHTML = "'your message has succesfully sent'"
-                }
+                let message = "'your message has succesfully sent'";
+                console.log(message);
             }
             else {
                 if (!this.opinion) this.errors.push("your opinion is important for us!")
