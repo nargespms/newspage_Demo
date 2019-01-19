@@ -1,9 +1,6 @@
-<template>
-     <ul>
-        <li class="mostview" v-for="item in myjson" v-bind:key="item._id">
-            email : {{item.email}}
-        </li>
-    </ul>
+<template lang="pug">
+     ul
+       li.mostview(v-for="item in myjson" v-bind:key="item._id")  email : {{item.email}}
 </template>
 
 <script>

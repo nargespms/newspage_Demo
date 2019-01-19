@@ -1,9 +1,6 @@
-<template>
-    <ul>
-        <li class="mostcomments" v-for="item in myjson" v-bind:key="item._id">
-           friend's name: {{item.friends[0].name}}
-        </li>
-    </ul>
+<template lang="pug">
+    ul
+      li.mostcomments(v-for="item in myjson" v-bind:key="item._id")   friend's name: {{item.friends[0].name}}
 </template>
 
 <script>

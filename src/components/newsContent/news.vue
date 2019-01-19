@@ -1,46 +1,31 @@
-<template>
-    <div class="content">
-      <button class="increase" v-on:click="fontSize++">
-          increase
-          <i class="fa fa-plus-square" aria-hidden="true"></i>
-      </button>
-      <button class="decrease" v-on:click="fontSize--">
-          decrease
-          <i class="fa fa-minus-square" aria-hidden="true"></i>
-      </button>
-      Font size is: {{ fontSize }}
-      <div>
-              <!-- news uptitle -->
-          <h2 class="newsUptitle">
-              {{mynews.uptitle}}
-          </h2>
-              <!-- news title -->
-          <a :href="mynews.primaryPicture">
-              <h1 class="newsTitle">
-                  {{mynews.title}}
-              </h1>
-          </a>
-              <!-- newsPrimaryPic -->
-          <a :href="mynews.primaryPicture" class="newsPrimaryPic_wrapper">
-              <img class="newsPrimaryPic" :src="mynews.primaryPicture" alt="" >
-          </a>
-              <!-- news lead -->
-          <p class="newsLead">{{mynews.lead}}</p>
-              <!-- newscontent -->
-          <div class="newsContent" v-bind:style="{ fontSize: fontSize + 'px' }">
-              {{mynews.content}}
-          </div>
-          <div class="keywords">
-              <i class="fa fa-tag  fa-rotate-90" aria-hidden="true"></i>
-              <ul>
-                  <li v-for="tag in mynews.tags" v-bind:key="tag.index">
-                      <span>{{tag}}</span>
-                      <i class="fa fa-circle" aria-hidden="true"></i>
-                  </li>
-              </ul>
-          </div>
-      </div>
-    </div>
+<template lang="pug">
+    div.content
+      button.increase(v-on:click="fontSize++") increase
+          i.fa.fa-plus-square(aria-hidden="true")
+      button.decrease(v-on:click="fontSize--") decrease
+          i.fa.fa-minus-square(aria-hidden="true")
+      span  Font size is: {{ fontSize }}
+          //- <!-- news uptitle -->
+      h2.newsUptitle
+          //- {{mynews.uptitle}}
+          //- <!-- news title -->
+      a(:href="mynews.primaryPicture")
+        h1.newsTitle
+          //- {{mynews.title}}
+          //- <!-- newsPrimaryPic -->
+      a.newsPrimaryPic_wrapper(:href="mynews.primaryPicture")
+        img.newsPrimaryPic(:src="mynews.primaryPicture" alt="")
+          //- <!-- news lead -->
+      p.newsLead {{mynews.lead}}
+          //- <!-- newscontent -->
+      div.newsContent(v-bind:style="{ fontSize: fontSize + 'px' }")
+          //- {{mynews.content}}
+          div.keywords
+              i.fa.fa-tag.fa-rotate-90(aria-hidden="true")
+              ul
+                li(v-for="tag in mynews.tags" v-bind:key="tag.index")
+                  span {{tag}}
+                  i.fa.fa-circle(aria-hidden="true")
 </template>
 
 <script>

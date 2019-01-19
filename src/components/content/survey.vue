@@ -1,23 +1,18 @@
-<template>
-    <form class="survey_wrap clear"  @submit.prevent="countPerson()">
-        <div class="clear">
-            <span class="survey_question">
-                choose one them :)
-            </span>
-            <div class="choices">
-                <input type="radio" id="one" value="One" v-model="choosed">
-                <label for="one">One</label>
+<template lang="pug">
+    form.survey_wrap.clear(@submit.prevent="countPerson()")
+        div.clear
+            span.survey_question choose one them :)
+            div.choices
+                input(type="radio" id="one" value="One" v-model="choosed")
+                label(for="one") One
 
-                <input type="radio" id="two" value="Two" v-model="choosed">
-                <label for="two">Two</label>
-            </div>
-        </div>
-        <p class="choosed_item">you chosed : {{ choosed }}</p>
-        <p class="numpart"> participated people : {{counter }}</p>
-        <!-- button for submitting -->
-        <input class="survey_but" type="submit" value="send">
-        <div class="survey_msg">{{showMe}}</div>
-    </form>
+                input(type="radio" id="two" value="Two" v-model="choosed")
+                label(for="two") Two
+        p.choosed_item you chosed : {{ choosed }}
+        p.numpart participated people : {{counter }}
+        //-  button for submitting
+        input.survey_but(type="submit" value="send")
+        div.survey_msg {{showMe}}
 </template>
 
 <script>

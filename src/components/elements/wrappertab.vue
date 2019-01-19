@@ -1,16 +1,11 @@
-<template>
-    <div class="tab_component_wrapper">
-        <div id="tab_component" class="demo">
-            <button class="tab_component_but"
-                v-for="tab in tabs"
+<template lang="pug">
+    div.tab_component_wrapper
+        div#tab_component.demo
+            button.tab_component_but(v-for="tab in tabs"
                 v-bind:key="tab"
                 v-bind:class="['tab-button', { active: currentTab === tab }]"
-                v-on:click="currentTab = tab">
-                    {{ tab }}
-            </button>
-            <component v-bind:is="currentTabComponent" class="tab"></component>
-        </div>
-    </div>
+                v-on:click="currentTab = tab") {{ tab }}
+            component.tab(v-bind:is="currentTabComponent")
 </template>
 
 <script>

@@ -1,10 +1,9 @@
-<template>
-    <div class="main_news_content">
-        <newsInfo/>
-        <news/>
-        <sendComment/>
-        <commentsList/>
-    </div>
+<template lang="pug">
+    div.main_news_content
+        newsInfo
+        news
+        sendComment
+        commentsList
 </template>
 
 <script>

@@ -1,28 +1,13 @@
-<template>
-    <div class="commentsList_wrapper">
-        <div class="commentsList_Header">
-            <span>
-                users comments
-            </span>
-        </div>
-        <ul class="commentsList">
-            <li v-for="comment in comments" :key="comment.index">
-                <div class="cm_inner_wrapp">
-                    <h3>
-                        name:  {{comment.name}}
-                    </h3>
-                    <time>
-                        date: {{comment.date}}
-                    </time>
-                    <h4>
-                        {{comment.content}}
-                    </h4>
-
-                </div>
-
-            </li>
-        </ul>
-    </div>
+<template lang="pug">
+    div.commentsList_wrapper
+        div.commentsList_Header
+            span users comments
+        ul.commentsList
+          li(v-for="comment in comments" :key="comment.index")
+            div.cm_inner_wrapp
+              h3 name:  {{comment.name}}
+              time date: {{comment.date}}
+              h4 {{comment.content}}
 </template>
 
 <script>

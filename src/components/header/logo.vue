@@ -1,5 +1,5 @@
-<template>
-    <img class="HeaderPicImg" src="../../images/logo.png">
+<template lang="pug">
+    img.HeaderPicImg(src="../../images/logo.png")
 </template>
 
 <script>

@@ -1,9 +1,7 @@
-<template>
-    <ul>
-        <li class="hot" v-for="item in myjson" v-bind:key="item._id">
-           age: {{item.age}}
-        </li>
-    </ul>
+<template lang="pug">
+    ul
+      li.hot(v-for="item in myjson" v-bind:key="item._id") age: {{item.age}}
+
 </template>
 
 <script>

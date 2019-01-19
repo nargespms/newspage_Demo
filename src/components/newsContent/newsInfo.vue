@@ -1,13 +1,8 @@
-<template >
-    <div class="news_info">
-        <span>
-            newscode : {{mynews._id}}  /
-        </span>
-        <span>
-            newsCategory : {{ mynews.newsCategory }}  /
-        </span>
-        <time>newsPublisheDate : {{mynews.datePublished }}</time>
-    </div>
+<template lang="pug">
+    div.news_info
+      span newscode : {{mynews._id}}
+      span newsCategory : {{ mynews.newsCategory }}
+      time newsPublisheDate : {{mynews.datePublished }}
 </template>
 
 <script>

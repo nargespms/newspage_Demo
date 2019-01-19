@@ -1,12 +1,9 @@
-<template>
-    <div class="outer_main_header ">
-        <div class="logo_wrapper">
-            <logo/>
-        </div>
-        <div class="social_wrapper">
-            <infoHeader/>
-        </div>
-
+<template lang="pug">
+    .outer_main_header
+        .logo_wrapper
+            logo
+        .social_wrapper
+            infoHeader
     </div>
 </template>
 

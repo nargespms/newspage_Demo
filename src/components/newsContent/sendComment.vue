@@ -1,25 +1,16 @@
-<template>
-    <form class="sendForm" action="" method="post" @submit.prevent="onSubmit">
-        <fieldset>
-            <legend>Send Your Opinions:</legend>
-            <input  v-model="Name" placeholder="Name" type="text">
-            <input v-model="email" type="email" placeholder="emailaddress">
-            <textarea v-model="opinion" name="opinion"  cols="40" rows="4"></textarea>
-            <input  type="submit" value="send" class="sendButton" >
-            <p v-if="errors.length">
-                <span>
-                    please correct the folowing error(s) :
-                </span>
-                <ul>
-                    <li class="error_wrap" v-for="error in errors" v-bind:key="error.index"> {{error}}</li>
-                </ul>
-            </p>
-           <div class="sucmsg">{{ message }}</div>
-        </fieldset>
-
-
-    </form>
-
+<template lang="pug">
+    form.sendForm(action="" method="post" @submit.prevent="onSubmit")
+      fieldset
+        legend Send Your Opinions:
+        input(v-model="Name" placeholder="Name" type="text")
+        input(v-model="email" type="email" placeholder="emailaddress")
+        textarea(v-model="opinion" name="opinion"  cols="40" rows="4")
+        input(type="submit" value="send" class="sendButton")
+        p(v-if="errors.length")
+          span please correct the folowing error(s) :
+            ul
+            li.error_wrap(v-for="error in errors" v-bind:key="error.index")  {{error}}
+        div.sucmsg {{ message }}
 </template>
 
 <script>
