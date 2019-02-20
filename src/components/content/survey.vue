@@ -16,7 +16,7 @@
         <p class="numpart"> participated people : {{counter }}</p>
         <!-- button for submitting -->
         <input class="survey_but" type="submit" value="send">
-        <div class="survey_msg">{{showMe}}</div>
+        <div class="survey_msg"><span class="eeee"> {{showMe}}</span></div>
     </form>
 </template>
 
@@ -34,12 +34,13 @@ export default {
        countPerson () {
          console.log('run heer');
            if (this.choosed.length !== 0 ){
-               this.counter = this.counter +1;
-                let showMe = "thank you :)";
-               console.log(showMe);
+              this.counter = this.counter +1;
+              this.showMe = "thank you :)";
+
            }
            else if (this.choosed.length == 0) {
-               document.getElementById("survey_msg").innerHTML = "please choose one the above & try again!"
+              //  console.log(this.choosed.length);
+               this.showMe = "please choose one the above & try again!"
            }
        }
    }
@@ -68,9 +69,9 @@ export default {
     float: left;
     margin-top: 12px;
 }
-#survey_msg {
+.survey_msg {
 	color: #ea3b16;
-	float: left;
+	float: right;
 	padding-left: 32px;
 	padding-top: 6px;
 }

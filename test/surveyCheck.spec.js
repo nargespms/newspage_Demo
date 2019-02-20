@@ -19,25 +19,35 @@ describe('survey', () => {
     wrapper.find('#two').trigger('click');
     expect(wrapper.find('.choosed_item').text()).toMatch('you chosed : Two');
   });
-  // when choosing none
-  it('when choosing none', () => {
-    const wrapper = shallowMount(survey);
-    wrapper.find("[type='submit']").trigger('click');
-    expect(wrapper.find('.survey_msg').exists()).toBe(true);
-  });
-  // when choosing none2
-  it('when choosing none choosing item', () => {
-    const wrapper = shallowMount(survey);
-    wrapper.find("[type='submit']").trigger('click');
-    expect(wrapper.find('.choosed_item').text()).toMatch('you chosed :');
-  });
-  // when choosing none2
-  it('when choosing none number of people', () => {
-    const wrapper = shallowMount(survey);
-    wrapper.find("[type='submit']").trigger('click');
-    expect(wrapper.find('.numpart').text()).toMatch('participated people : 0');
-  });
+  // // when choosing none
+  // it('when choosing none', () => {
+  //   const wrapper = shallowMount(survey);
+  //   wrapper.find("[type='submit']").trigger('click');
+  //   expect(wrapper.find('.survey_msg').exists()).toBe(true);
+  // });
+  // // when choosing none2
+  // it('when choosing none choosing item', () => {
+  //   const wrapper = shallowMount(survey);
+  //   wrapper.find("[type='submit']").trigger('click');
+  //   expect(wrapper.find('.choosed_item').text()).toMatch('you chosed :');
+  // });
+  // // when choosing none2
+  // it('when choosing none number of people', () => {
+  //   const wrapper = shallowMount(survey);
+  //   wrapper.find("[type='submit']").trigger('click');
+  //   expect(wrapper.find('.numpart').text()).toMatch('participated people : 0');
+  // });
   // **********************no effected in coverage**********************
+
+  // **********************no effected in coverage**********************
+  // if choosing any counter shoud increase
+  // it('should not increase number of people  ', () => {
+  //   const wrapper = shallowMount(survey);
+  //   console.log(wrapper.vm.choosed.length);
+  //   expect(wrapper.vm.choosed.length).toBe(0);
+  // });
+  // **********************no effected in coverage**********************
+  // _*_*_*_*_*_**_*_*_*_*_*_*___*_*_*_*_*_*_*_**__*__**_*_*_
   // if choosing any counter shoud increase (choosed item.length != 0)
   it('should increase number of people', () => {
     const wrapper = shallowMount(survey);
@@ -45,19 +55,21 @@ describe('survey', () => {
     wrapper.find('form').trigger('submit.prevent');
     expect(wrapper.vm.counter).toBe(1);
   });
-  // // if choosing any counter shoud increase (choosed item.length == 0)
-  // it('should not increase number of people  ', () => {
-  //   const wrapper = shallowMount(survey);
-  //   wrapper.find('form').trigger('submit.prevent');
-  //   expect(wrapper.vm.counter).toBe(0);
-  //   // console.log(wrapper.vm.choosed);
-  // });
-  // **********************no effected in coverage**********************
-  // if choosing any counter shoud increase
-  it('should not increase number of people  ', () => {
+  // choosed.length should be 0
+  it('shows no option is selected', () => {
     const wrapper = shallowMount(survey);
-    console.log(wrapper.vm.choosed.length);
-    expect(wrapper.vm.choosed.length).toBe(0);
+    expect(wrapper.vm.choosed.length).toEqual(0);
   });
-  // **********************no effected in coverage**********************
+  // show me variable should show this message
+  it('should show choosing message', () => {
+    const wrapper = shallowMount(survey);
+    wrapper.setData({
+      choosed: '',
+    });
+    console.log(wrapper.vm.choosed.length);
+    console.log(wrapper.vm.showMe.length);
+
+  // expect(wrapper.vm.showMe).toBe('please choose one the above & try again!');
+  });
+  // _*_*_*_*_*_**_*_*_*_*_*_*___*_*_*_*_*_*_*_**__*__**_*_*_
 });
