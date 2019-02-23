@@ -60,16 +60,16 @@ describe('survey', () => {
     const wrapper = shallowMount(survey);
     expect(wrapper.vm.choosed.length).toEqual(0);
   });
-  // show me variable should show this message
-  it('should show choosing message', () => {
+  // _*_*_*_*_*_**_*_*_*_*_*_*___*_*_*_*_*_*_*_**__*__**_*_*_
+  it('show somthing is chosen', () => {
     const wrapper = shallowMount(survey);
     wrapper.setData({
       choosed: '',
     });
+    wrapper.find('form').trigger('submit.prevent');
     console.log(wrapper.vm.choosed.length);
     console.log(wrapper.vm.showMe.length);
-
-  // expect(wrapper.vm.showMe).toBe('please choose one the above & try again!');
+    expect(wrapper.vm.showMe).toBe('please choose one the above & try again!');
+    expect(wrapper.vm.choosed.length).toBe(0);
   });
-  // _*_*_*_*_*_**_*_*_*_*_*_*___*_*_*_*_*_*_*_**__*__**_*_*_
 });

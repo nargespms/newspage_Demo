@@ -15,6 +15,8 @@
                 </ul>
             </p>
            <div class="sucmsg">{{ message }}</div>
+           <div class="sucmsg">{{ Secmessage }}</div>
+           <div class="sucmsg">{{ thirdmessage }}</div>
         </fieldset>
 
 
@@ -32,6 +34,8 @@ export default {
           email : '',
           errors : [],
           message: '',
+          Secmessage: '',
+          thirdmessage: '',
         }
     },
     methods: {
@@ -43,17 +47,34 @@ export default {
                     opinion : this.opinion,
                 }
 
+                //successfull message
+                this.message = "'your message has succesfully sent'";
                 //for resetting form
                 this.Name = null,
                 this.email = null,
                 this.opinion = null;
-                //successfull message
-                let message = "'your message has succesfully sent'";
-                console.log(message);
             }
-            else {
-                if (!this.opinion) this.errors.push("your opinion is important for us!")
-                if (!this.email) this.errors.push("enter your email please ,so we could reply ")
+            else if (!this.opinion) {
+                this.errors = [];
+                this.errors.push("your opinion is important for us!");
+            }
+            else if (!this.email) {
+                this.errors = [];
+                this.errors.push("enter your email please ,so we could reply ");
+            }
+            else if (this.opinion.length !== 0 && this.email.length !== 0 && this.errors.length !== 0){
+                let formData = {
+                    firstName : this.Name,
+                    email : this.email,
+                    opinion : this.opinion,
+                }
+                //successfull message
+                this.Secmessage = "'congrats! your message has succesfully sent'";
+                //for resetting form
+                this.Name = null,
+                this.email = null,
+                this.opinion = null;
+                this.errors = [];
             }
         },
 

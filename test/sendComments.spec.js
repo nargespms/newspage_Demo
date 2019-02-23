@@ -22,7 +22,7 @@ describe('send Comments ', () => {
     expect(wrapper.vm.Name).toBe(null);
     expect(wrapper.vm.email).toBe(null);
     expect(wrapper.vm.message).toBe("'your message has succesfully sent'");
-    log(wrapper.vm.message);
+    // log(wrapper.vm.message);
   });
 
   // send comment succesfully2 errors length shoud be 0
@@ -50,18 +50,7 @@ describe('send Comments ', () => {
     // log(wrapper.vm.errors);
     expect(wrapper.find('.error_wrap').exists()).toBe(true);
   });
-  // send comment unsuccesfully email not intered email empty
-  it('send comment unsuccesfully email error', () => {
-    const wrapper = shallowMount(sendComment);
-    wrapper.setData({
-      Name: 'sara',
-      opinion: 'something',
-    });
-    wrapper.find('form').trigger('submit.prevent');
-    // expect(wrapper.vm.opinion).toBe(null);
-    // log(wrapper.vm.email);
-    expect(wrapper.vm.email).toBe('');
-  });
+
   // send comment unsuccesfully email not intered opinion empty
   it('send comment unsuccesfully opinion error2', () => {
     const wrapper = shallowMount(sendComment);
@@ -73,5 +62,21 @@ describe('send Comments ', () => {
     // expect(wrapper.vm.opinion).toBe(null);
     // log(wrapper.setData());
     expect(wrapper.vm.opinion).toBe('');
+  });
+  //  send comments succesfully after fixing errors
+  it('send comments succesfully after fixing errors', () => {
+    const wrapper = shallowMount(sendComment);
+    wrapper.setData({
+      opinion: 'something',
+      email: 'somethingElse',
+      errors: ['sdszd'],
+      // Secmessage: "'congrats! your message has succesfully sent'",
+      // message: '',
+    });
+    wrapper.find('form').trigger('submit.prevent');
+    expect(wrapper.vm.opinion).toBe(null);
+    expect(wrapper.vm.Name).toBe(null);
+    expect(wrapper.vm.email).toBe(null);
+    expect(wrapper.vm.Secmessage).toBe("'congrats! your message has succesfully sent'");
   });
 });
