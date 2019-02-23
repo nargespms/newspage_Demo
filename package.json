@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config ./build/webpack.config.prod.js",
     "start": "webpack-dev-server  --config ./build/webpack.config.dev.js  ",
-    "test": "mocha-webpack --webpack-config ./build/webpack.config.test.js --require test/setup.js test/surveyCheck.spec.js",
+    "test": "mocha-webpack --webpack-config ./build/webpack.config.test.js --require test/setup.js test/**/*.spec.js",
     "testOnline": "npm run test -- --watch",
     "cover": "cross-env NODE_ENV=coverage nyc --reporter=lcov --reporter=html --reporter=text  npm run test"
   },
