@@ -24,21 +24,20 @@
 
 </template>
 
-<script>
-export default {
-    name: 'sendComment',
-    data() {
-        return {
-          Name : '',
-          opinion: '',
-          email : '',
-          errors : [],
-          message: '',
-          Secmessage: '',
-          thirdmessage: '',
-        }
-    },
-    methods: {
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
+
+  @component({})
+export default class sendComment extends Vue {
+          Name :string= '';
+          opinion:string= '';
+          email :string= '';
+          errors :Array<string>= [];
+          message:string= '';
+          Secmessage:string= '';
+          thirdmessage:string= '';
+
         onSubmit () {
             if (this.opinion.length !== 0 && this.email.length !== 0 && this.errors.length == 0) {
                 let formData = {
@@ -46,13 +45,12 @@ export default {
                     email : this.email,
                     opinion : this.opinion,
                 }
-
                 //successfull message
                 this.message = "'your message has succesfully sent'";
                 //for resetting form
-                this.Name = null,
-                this.email = null,
-                this.opinion = null;
+                this.Name = '',
+                this.email = '',
+                this.opinion = '';
             }
             else if (!this.opinion) {
                 this.errors = [];
@@ -71,15 +69,12 @@ export default {
                 //successfull message
                 this.Secmessage = "'congrats! your message has succesfully sent'";
                 //for resetting form
-                this.Name = null,
-                this.email = null,
-                this.opinion = null;
+                this.Name = '',
+                this.email = '',
+                this.opinion = '';
                 this.errors = [];
             }
-        },
-
-
-    }
+        }
 }
 </script>
 

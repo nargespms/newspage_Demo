@@ -43,18 +43,17 @@
     </div>
 </template>
 
-<script>
-import mainNewsData from '../../data/mainNewsData.json'
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
 
-export default {
-    name:'news',
-    data() {
-        return {
-            mynews : mainNewsData,
-            fontSize: 14,
-        }
-    }
-}
+  import mainNewsData from '../../data/mainNewsData.json'
+
+  @component({})
+  export default class news extends Vue {
+    mynews = mainNewsData;
+    fontSize:number = 14;
+  }
 </script>
 
 <style lang="scss">

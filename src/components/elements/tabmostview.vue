@@ -6,16 +6,15 @@
     </ul>
 </template>
 
-<script>
-import generated from '../../data/generated.json'
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
+  import generated from '../../data/generated.json'
 
-export default {
-    name: 'mostview',
-    data(){
-        return{
-            myjson: generated
-        }
-    }
+  @component({})
+
+export default class mostview extends Vue {
+    myjson = generated
 }
 </script>
 

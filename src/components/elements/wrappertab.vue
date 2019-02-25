@@ -13,30 +13,30 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
+
   import tabhotest from './tabhotest.vue';
   import tabmostview from './tabmostview.vue';
   import tabmostcoments from './tabmostcoments.vue';
 
-  export default {
-      name: 'wrappertab',
-        components: {
-          tabmostview,
-          tabmostcoments,
-          tabhotest,
-      },
-      data: function() {
-          return  {
-          currentTab: 'hotest',
-          tabs: ['hotest', 'mostview', 'mostcoments']
-          }
-      },
-      computed: {
-          currentTabComponent: function () {
+  @component({
+    components: {
+      tabmostview,
+      tabmostcoments,
+      tabhotest,
+    }
+  })
+  export default class wrappertab extends Vue {
+    currentTab:string = 'hotest';
+    tabs:Array<string> = ['hotest', 'mostview', 'mostcoments'];
+
+      get currentTabComponent() {
           return 'tab' + this.currentTab.toLowerCase()
-          }
       }
   }
+
 </script>
 
 <style lang="scss" scoped>

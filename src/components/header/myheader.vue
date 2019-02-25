@@ -10,15 +10,20 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
   import logo from './logo.vue'
   import infoHeader from './infoHeader.vue'
 
-  export default {
-    components: {
+  @component({
+     components: {
       logo,
       infoHeader,
     },
+  })
+  export default class myheader extends Vue  {
+
   }
 </script>
 
