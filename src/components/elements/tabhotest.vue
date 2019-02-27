@@ -8,7 +8,6 @@
 
 <script>
 import generated from '../../data/generated.json'
-
 export default {
     name: 'hotest',
     data: function() {
