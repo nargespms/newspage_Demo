@@ -20,31 +20,27 @@
     </form>
 </template>
 
-<script>
-export default {
-    name: 'survey',
-      data : function() {
-          return {
-              choosed: [],
-              counter: 0,
-              showMe : '',
-          }
-      },
-    methods : {
-       countPerson () {
-         console.log('run heer');
-           if (this.choosed.length !== 0 ){
-              this.counter = this.counter +1;
-              this.showMe = "thank you :)";
+<script lang ="ts">
+import component from 'vue-class-component';
+import  { Vue, Component, Prop} from "vue-property-decorator";
+  @component({})
+  export default class survey extends Vue {
+      choosed:Array<number>= [];
+      counter:number= 0;
+      showMe:string = '';
 
-           }
-           else if (this.choosed.length == 0) {
-              //  console.log(this.choosed.length);
-               this.showMe = "please choose one the above & try again!"
-           }
-       }
-   }
-}
+       countPerson () {
+          if (this.choosed.length !== 0 ){
+            this.counter = this.counter +1;
+            this.showMe = "thank you :)";
+
+          }
+          else if (this.choosed.length == 0) {
+            //  console.log(this.choosed.length);
+              this.showMe = "please choose one the above & try again!"
+          }
+      }
+  }
 </script>
 
 <style lang="scss" scoped>

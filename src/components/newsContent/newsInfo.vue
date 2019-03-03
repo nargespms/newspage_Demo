@@ -10,18 +10,14 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
+
   import mainNewsData from '../../data/mainNewsData.json'
-
-  export default {
-
-      name: 'newsInfo',
-      data() {
-          return {
-              mynews:mainNewsData,
-          }
-      }
-
+  @component({})
+  export default class newsInfo extends Vue {
+    mynews = mainNewsData;
   }
 </script>
 

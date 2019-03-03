@@ -2,9 +2,13 @@
     <img class="HeaderPicImg" src="../../images/logo.png">
 </template>
 
-<script>
-  export default {
-      name: 'logo',
+<script lang="ts">
+import component from 'vue-class-component';
+import  { Vue, Component, Prop} from "vue-property-decorator";
+
+  @component({})
+  export default class logo extends Vue {
+
   }
 </script>
 

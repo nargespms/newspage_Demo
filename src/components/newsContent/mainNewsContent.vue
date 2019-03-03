@@ -7,20 +7,25 @@
     </div>
 </template>
 
-<script>
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
+
   import newsInfo from './newsInfo.vue';
   import news from './news.vue';
   import sendComment from './sendComment.vue';
   import commentsList from './commentsList.vue';
 
-  export default {
-      name: 'mainNewsContent',
-      components: {
-          newsInfo,
-          news,
-          sendComment,
-          commentsList,
-      }
+  @component({
+    components: {
+        newsInfo,
+        news,
+        sendComment,
+        commentsList,
+    }
+  })
+
+  export default class mainNewsContent extends Vue {
   }
 </script>
 

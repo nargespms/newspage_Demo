@@ -5,11 +5,12 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const srcPath = path.resolve(__dirname, '../src');
 
 module.exports = {
-  entry: './src/inmain.js',
+  entry: './src/inmain.ts',
   output: {
     filename: 'out.js',
   },
   resolve: {
+    extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       // extensions: ['.js', '.vue', '.json'],
       vue: 'vue/dist/vue.esm.js',
@@ -18,6 +19,14 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        },
+      },
       {
         test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
         use: [{
@@ -52,10 +61,12 @@ module.exports = {
           //   presets: ['@babel/preset-env'],
           // },
         },
+        // esModule: true,
       },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
+
       },
       {
         test: /\.(png|jpg|gif)$/i,

@@ -8,33 +8,39 @@
             <wrappertab/>
             <survey/>
         </div>
-    
+
     </div>
 </template>
 
 
 
-<script >
-import myheader from './components/header/myheader.vue';
-import mainNewsContent from './components/newsContent/mainNewsContent.vue';
-import wrappertab from './components/elements/wrappertab.vue';
-import survey from './components/content/survey.vue';
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
 
-export default {
+  import myheader from './components/header/myheader.vue';
+  import mainNewsContent from './components/newsContent/mainNewsContent.vue';
+  import wrappertab from './components/elements/wrappertab.vue';
+  import survey from './components/content/survey.vue';
 
-    components: {  
+    @component({
+      components: {
         myheader,
         mainNewsContent,
         wrappertab,
         survey,
-    },
-    
-}
+      }
+    })
+    export default class App extends Vue {
+
+    }
 
 </script>
 
 <style lang="scss" scoped>
-
+.main_outer_wrapper  {
+  overflow: auto;
+}
 .sidebar {
     width: 40%;
     float: right;

@@ -18,9 +18,9 @@ describe('send Comments ', () => {
     });
     wrapper.find('form').trigger('submit.prevent');
 
-    expect(wrapper.vm.opinion).toBe(null);
-    expect(wrapper.vm.Name).toBe(null);
-    expect(wrapper.vm.email).toBe(null);
+    expect(wrapper.vm.opinion).toBe('');
+    expect(wrapper.vm.Name).toBe('');
+    expect(wrapper.vm.email).toBe('');
     expect(wrapper.vm.message).toBe("'your message has succesfully sent'");
     // log(wrapper.vm.message);
   });
@@ -74,9 +74,9 @@ describe('send Comments ', () => {
       // message: '',
     });
     wrapper.find('form').trigger('submit.prevent');
-    expect(wrapper.vm.opinion).toBe(null);
-    expect(wrapper.vm.Name).toBe(null);
-    expect(wrapper.vm.email).toBe(null);
+    expect(wrapper.vm.opinion).toBe('');
+    expect(wrapper.vm.Name).toBe('');
+    expect(wrapper.vm.email).toBe('');
     expect(wrapper.vm.Secmessage).toBe("'congrats! your message has succesfully sent'");
   });
 });

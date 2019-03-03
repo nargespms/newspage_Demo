@@ -25,16 +25,15 @@
     </div>
 </template>
 
-<script>
-  import comments from '../../data/comments.json'
+<script lang="ts">
+  import component from 'vue-class-component';
+  import  { Vue, Component, Prop} from "vue-property-decorator";
 
-  export default {
-      name: 'commentsList',
-      data() {
-          return {
-              comments : comments,
-          }
-      }
+  import comments from '../../data/comments.json'
+  @component({})
+
+  export default class commentsList extends Vue {
+    comments = comments;
   }
 </script>
 
